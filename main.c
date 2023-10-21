@@ -9,9 +9,9 @@ int main(void)
   for(int i = 0; splash[i] != NULL; i++ )
   {
     printf("%s\n", splash[i]);
-    usleep(10000);
+    usleep(1000);
   }
-  sleep(3);
+  sleep(2);
   system("cls");
   return 0;
 }
