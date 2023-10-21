@@ -5,13 +5,13 @@
 
 int main(void)
 {
-  system("clear"); //for clearing the terminal screen
+  system("cls"); //for clearing the terminal screen
   for(int i = 0; splash[i] != NULL; i++ )
   {
     printf("%s\n", splash[i]);
-    usleep(100000);
+    usleep(10000);
   }
   sleep(3);
-  system("clear");
+  system("cls");
   return 0;
 }
