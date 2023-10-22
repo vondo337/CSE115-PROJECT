@@ -1,5 +1,11 @@
+/*CSE115 PROJECT
+Name: Ahmed Ishmam Arefin
+ID: 2322035642
+Section: 9
+Project Name: Bank Management System*/
 #include<stdio.h>
 #include<string.h>
+#include<unistd.h>
 #include<dos.h>
 #include "splash.h"
 
@@ -13,7 +19,11 @@ int main(void)
   }
   sleep(2);
   system("cls");
-  printf("---------------------------Welcome to the bank---------------------------\n");
+  
+  
+  printf("                      ---------------------------Welcome to TND Bank ---------------------------\n");
   printf("1. Login\n2. Register\n3. Exit ");
+
+  
   return 0;
 }
