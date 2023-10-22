@@ -1,5 +1,5 @@
 # Bank Management System
------------------------------------
+
 |Functions|
 |         |
 |---------|         
