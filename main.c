@@ -43,12 +43,13 @@ int main(void)
   scanf("%d", &choice);
   if(choice == 1)
   {
-    char username[50], pin[5];
+    char username[50];
+    int pin[4];
     system("cls");
     printf("Username: ");
     scanf("%s", username);
     printf("Password: ");
-    scanf("%4s", pin);
+    scanf("%4d", pin);
     int index = account(user, usercount, username, pin );
     if(index != -1)
     {
@@ -61,12 +62,13 @@ int main(void)
   }
   else if(choice == 2)
   {
-    char username[50], pin[5];
+    char username[50]; 
+    int pin[4];
     system("cls");
     printf("Enter your username: ");
     scanf("%s", username);
     printf("Enter your 4-digit PIN: ");
-    scanf("%s", pin);
+    scanf("%d", pin);
     registeraccount(user, &usercount, username, pin);
   }
   else if(choice == 3)

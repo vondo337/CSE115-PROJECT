@@ -6,12 +6,10 @@
 struct User
 {
   char username[50];
-  char pin[5];    // 4-digit pin
+  int pin[4];    // 4-digit pin
 };
-void registeraccount(struct User user[], int *usercount, const char username[], const char pin[]);
-int account(const struct User user[], int usercount, const char username[], const char pin[]);
 
-void registeraccount(struct User user[], int *usercount, const char username[], const char pin[])
+void registeraccount(struct User user[], int *usercount, const char username[], const int pin[])
 {
   if(*usercount < MAX_USERS)
   {
@@ -21,7 +19,7 @@ void registeraccount(struct User user[], int *usercount, const char username[], 
   }
 }
 
-int account(const struct User user[], int usercount, const char username[], const char pin[])
+int account(const struct User user[], int usercount, const char username[], const int pin[])
 {
   for(int i = 0; i < usercount; i++)
   {
