@@ -6,9 +6,9 @@
 struct User
 {
   char username[50];
-  char pin[5];
+  char pin[5];    // 4-digit pin
 };
-void userregister(struct User user[], int *usercount, const char username[], const char pin[]);
-int userlogin(const struct User user[], int usercount, const char username[], const char pin[]);
+void registeraccount(struct User user[], int *usercount, const char username[], const char pin[]);
+int account(const struct User user[], int usercount, const char username[], const char pin[]);
 
 #endif
