@@ -6,7 +6,7 @@ Project Name: Bank Management System*/
 #include<stdio.h>
 #include<string.h>
 #include<unistd.h>
-#include<dos.h>
+#include<windows.h>
 #include "loginregsystem.h"
 #include "splash.h"
 
@@ -48,7 +48,7 @@ int main(void)
     system("cls");
     printf("Username: ");
     scanf("%s", username);
-    printf("Password: ");
+    printf("PIN CODE: ");
     scanf("%4d", pin);
     int index = account(user, usercount, username, pin );
     if(index != -1)
