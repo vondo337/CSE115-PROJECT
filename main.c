@@ -7,8 +7,10 @@ Project Name: Bank Management System*/
 #include<string.h>
 #include<unistd.h>
 #include<windows.h>
-#include "loginregsystem.h"
 #include "splash.h"
+#include "loginregsystem.h"
+#include "menu.h"
+
 
 int main(void)
 {
@@ -24,26 +26,31 @@ int main(void)
     int userCount = 0;
     int choice;
     FILE *file = fopen("users.txt", "r");
-    if (file) {
+    if (file) 
+    {
         while (fscanf(file, "%s %s", users[userCount].username, users[userCount].password) == 2) {
             userCount++;
         }
         fclose(file);
     }
 
-    while (1) {
+    while (1) 
+    {
         printf("                      ---------------------------Welcome to TND Bank ---------------------------\n");
         printf("1. Register\n2. Login\n3. Quit\nEnter your choice: ");
         scanf("%d", &choice);
 
-        if (choice == 1) {
+        if(choice == 1) 
+        {
             char username[50], password[50];
             printf("Enter a username: ");
             scanf("%s", username);
             printf("Enter a password: ");
             scanf("%s", password);
             registerUser(users, &userCount, username, password);
-        } else if (choice == 2) {
+        } 
+        else if(choice == 2) 
+        {
             char username[50], password[50];
             printf("Enter your username: ");
             scanf("%s", username);
@@ -55,14 +62,47 @@ int main(void)
             } else {
                 printf("Login failed. Invalid username or password.\n");
             }
-        } else if (choice == 3) {
+        } 
+        else if(choice == 3) 
+        {
             break;
-        } else {
+        } 
+        else 
+        {
             printf("Invalid choice. Please try again.\n");
         }
+        system("cls");
+        printf("       ---------------------------Main Menu---------------------------\n");
+        printf("1. Withdraw Money\n2. Deposit Money\n3. Check Balance\n4. Transfer money\n5. Delete your account\n6. Exit\nEnter your choice: ");
+        scanf("%d", &choice);
+        if(choice == 1)
+        {
+            void withdrawmoney();
+        }
+        else if(choice == 2)
+        {
+            void depositmoney();
+        }
+        else if(choice == 3)
+        {
+            void checkbalance();
+        }
+        else if(choice == 4)
+        {
+            void transfermoney();
+        }
+        else if(choice == 5)
+        {
+            void accountdeletion();
+        }
+        else if(choice == 6)
+        {
+            break;
+        }
+        else
+        {
+            printf("Invalid choice. Please try again.");
+        }
     }
-
-
-  
   return 0;
 }
