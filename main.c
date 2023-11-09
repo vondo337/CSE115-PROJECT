@@ -75,6 +75,7 @@ int main(void)
         {
             printf("Invalid choice. Please try again.\n");
         }
+        sleep(1);        
         system("cls");
         printf("       ---------------------------Main Menu---------------------------\n");
         printf("1. Withdraw Money\n2. Deposit Money\n3. Check Balance\n4. Transfer money\n5. Delete your account\n6. Exit\nEnter your choice: ");
@@ -107,6 +108,6 @@ int main(void)
         {
             printf("Invalid choice. Please try again.");
         }
-    }
+    }  
   return 0;
 }
