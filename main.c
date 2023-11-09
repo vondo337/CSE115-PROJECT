@@ -28,7 +28,8 @@ int main(void)
     FILE *file = fopen("users.txt", "r");
     if (file) 
     {
-        while (fscanf(file, "%s %s", users[userCount].username, users[userCount].password) == 2) {
+        while (fscanf(file, "%s %s", users[userCount].username, users[userCount].password) == 2) 
+        {
             userCount++;
         }
         fclose(file);
@@ -36,7 +37,7 @@ int main(void)
 
     while (1) 
     {
-        printf("                      ---------------------------Welcome to TND Bank ---------------------------\n");
+        printf("                      ---------------------------Welcome to the Bank of TND ---------------------------\n");
         printf("1. Register\n2. Login\n3. Quit\nEnter your choice: ");
         scanf("%d", &choice);
 
@@ -57,9 +58,11 @@ int main(void)
             printf("Enter your password: ");
             scanf("%s", password);
             int index = loginUser(users, userCount, username, password);
-            if (index != -1) {
+            if (index != -1) 
+            {
                 printf("Login successful. Welcome, %s!\n", users[index].username);
-            } else {
+            } else 
+            {
                 printf("Login failed. Invalid username or password.\n");
             }
         } 
