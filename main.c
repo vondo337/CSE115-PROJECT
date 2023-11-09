@@ -61,7 +61,8 @@ int main(void)
             if (index != -1) 
             {
                 printf("Login successful. Welcome, %s!\n", users[index].username);
-            } else 
+            } 
+            else 
             {
                 printf("Login failed. Invalid username or password.\n");
             }
