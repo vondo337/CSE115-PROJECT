@@ -43,24 +43,40 @@ int main(void)
 
         if(choice == 1) 
         {
+            char ch;
+            int i = 0;
             char username[50], password[50];
             printf("Enter a username: ");
             scanf("%s", username);
             printf("Enter a password: ");
-            scanf("%s", password);
+            while((ch = _getch()) != 13)
+            {
+                password[i] = ch;
+                i++;
+                printf("*");
+            }
+            password[i] = '\0';
             registerUser(users, &userCount, username, password);
         } 
         else if(choice == 2) 
         {
+            char ch;
+            int i = 0;
             char username[50], password[50];
             printf("Enter your username: ");
             scanf("%s", username);
             printf("Enter your password: ");
-            scanf("%s", password);
+            while((ch = _getch()) != 13)
+            {
+                password[i] = ch;
+                i++;
+                printf("*");
+            }
+            password[i] = '\0';
             int index = loginUser(users, userCount, username, password);
             if (index != -1) 
             {
-                printf("Login successful. Welcome, %s!\n", users[index].username);
+                printf("\nLogin successful. Welcome, %s!\n", users[index].username);
                 sleep(1);        
                 system("cls");
                 printf("       ---------------------------Main Menu---------------------------\n");
