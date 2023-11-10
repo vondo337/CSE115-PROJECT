@@ -14,18 +14,19 @@ Project Name: Bank Management System*/
 
 int main(void)
 {
-  system("cls");      //for clearing the terminal screen
-  for(int i = 0; splash[i] != NULL; i++ )
-  {
-        printf("%s\n", splash[i]);
-        usleep(1000);
-  }
-  sleep(2);
-  system("cls");
-  struct User users[MAX_USERS];
+    //Splash Screen
+    system("cls");      
+    for(int i = 0; splash[i] != NULL; i++ )
+    {
+            printf("%s\n", splash[i]);
+            usleep(1000);
+    }
+    sleep(2);
+    system("cls");
+    struct User users[MAX_USERS];
     int userCount = 0;
     int choice;
-    FILE *file = fopen("users.txt", "r");
+    FILE *file = fopen("users.txt", "r");   //Loads account username and passowrd
     if (file) 
     {
         while (fscanf(file, "%s %s", users[userCount].username, users[userCount].password) == 2) 
@@ -34,7 +35,7 @@ int main(void)
         }
         fclose(file);
     }
-
+    //Login Screen
     while (1) 
     {
         printf("                      ---------------------------Welcome to the Bank of TND ---------------------------\n");
@@ -79,6 +80,7 @@ int main(void)
                 printf("\nLogin successful. Welcome, %s!\n", users[index].username);
                 sleep(1);        
                 system("cls");
+                //Menu Screen
                 printf("       ---------------------------Main Menu---------------------------\n");
                 printf("1. Withdraw Money\n2. Deposit Money\n3. Check Balance\n4. Transfer money\n5. Delete your account\n6. Exit\nEnter your choice: ");
                 scanf("%d", &choice);
