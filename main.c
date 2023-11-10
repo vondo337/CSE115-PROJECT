@@ -61,6 +61,39 @@ int main(void)
             if (index != -1) 
             {
                 printf("Login successful. Welcome, %s!\n", users[index].username);
+                sleep(1);        
+                system("cls");
+                printf("       ---------------------------Main Menu---------------------------\n");
+                printf("1. Withdraw Money\n2. Deposit Money\n3. Check Balance\n4. Transfer money\n5. Delete your account\n6. Exit\nEnter your choice: ");
+                scanf("%d", &choice);
+                if(choice == 1)
+                {
+                    void withdrawmoney();
+                }
+                else if(choice == 2)
+                {
+                    void depositmoney();
+                }
+                else if(choice == 3)
+                {
+                    void checkbalance();
+                }
+                else if(choice == 4)
+                {
+                    void transfermoney();
+                }
+                else if(choice == 5)
+                {
+                    void accountdeletion();
+                }
+                else if(choice == 6)
+                {
+                    break;
+                }
+                else
+                {
+                    printf("Invalid choice. Please try again.");
+                }
             } 
             else 
             {
@@ -74,39 +107,6 @@ int main(void)
         else 
         {
             printf("Invalid choice. Please try again.\n");
-        }
-        sleep(1);        
-        system("cls");
-        printf("       ---------------------------Main Menu---------------------------\n");
-        printf("1. Withdraw Money\n2. Deposit Money\n3. Check Balance\n4. Transfer money\n5. Delete your account\n6. Exit\nEnter your choice: ");
-        scanf("%d", &choice);
-        if(choice == 1)
-        {
-            void withdrawmoney();
-        }
-        else if(choice == 2)
-        {
-            void depositmoney();
-        }
-        else if(choice == 3)
-        {
-            void checkbalance();
-        }
-        else if(choice == 4)
-        {
-            void transfermoney();
-        }
-        else if(choice == 5)
-        {
-            void accountdeletion();
-        }
-        else if(choice == 6)
-        {
-            break;
-        }
-        else
-        {
-            printf("Invalid choice. Please try again.");
         }
     }  
   return 0;
