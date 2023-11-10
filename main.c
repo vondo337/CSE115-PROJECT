@@ -113,7 +113,7 @@ int main(void)
             } 
             else 
             {
-                printf("Login failed. Invalid username or password.\n");
+                printf("\nLogin failed. Invalid username or password.\n");
                 sleep(1);
                 system("cls");
             }
