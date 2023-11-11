@@ -4,6 +4,7 @@ ID: 2322035642
 Section: 9
 Project Name: Bank Management System*/
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
 #include<unistd.h>
 #include<windows.h>
@@ -58,6 +59,9 @@ int main(void)
             }
             password[i] = '\0';
             registerUser(users, &userCount, username, password);
+            printf("\nAccount created successfully.");
+            sleep(1);
+            system("cls");
         } 
         else if(choice == 2) 
         {
@@ -90,11 +94,11 @@ int main(void)
                 }
                 else if(choice == 2)
                 {
-                    void depositmoney();
+                     
                 }
                 else if(choice == 3)
                 {
-                    void checkbalance();
+                    void checkbalance(balance);
                 }
                 else if(choice == 4)
                 {
