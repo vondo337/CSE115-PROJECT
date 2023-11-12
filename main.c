@@ -8,7 +8,8 @@ Project Name: Bank Management System*/
 #include<string.h>
 #include<unistd.h>
 #include<windows.h>
-typedef struct {
+typedef struct 
+{
     char name[50];
     int account_number;
     double balance;
@@ -21,7 +22,7 @@ void depositmoney();
 void withdrawmoney();
 void accountdeletion();
 #include "splash.h"
-#include "loginregsystem.h"
+#include "loginsystem.h"
 #include "menu.h"
 
 
@@ -29,17 +30,17 @@ int main(void)
 {
     screen();
     int choice;
-    double balance;
-    //Login Screen
-        printf("                      ---------------------------Welcome to the Bank of TND ---------------------------\n");
+    //Main Menu
     do {
-        printf("1. Create Account\n");
-        printf("2. Deposit\n");
-        printf("3. Withdraw\n");
-        printf("4. Transfer\n");
-        printf("5. Check Balance\n");
-        printf("6. Delete Account\n");
-        printf("7. Exit\n");
+         printf("                      ---------------------------Welcome to the Bank of TND ---------------------------\n");
+        printf("\n\t\t\t\t\t\t\tMain Menu\n");
+        printf("\t\t\t\t\t\t1. Create Account\n");
+        printf("\t\t\t\t\t\t2. Deposit\n");
+        printf("\t\t\t\t\t\t3. Withdraw\n");
+        printf("\t\t\t\t\t\t4. Transfer\n");
+        printf("\t\t\t\t\t\t5. Check Balance\n");
+        printf("\t\t\t\t\t\t6. Delete Account\n");
+        printf("\t\t\t\t\t\t7. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -63,11 +64,12 @@ int main(void)
                 accountdeletion();
                 break;
             case 7:
-                printf("Exiting the program. Thank you!\n");
+                printf("Thank you for using our banking system!\n");
                 break;
             default:
                 printf("Invalid choice. Please try again.\n");
         }
     } while (choice != 7);
+
   return 0;
 }
