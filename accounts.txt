@@ -1,5 +1,3 @@
-nokks 2134 1000.00
 ishmam 2112 8000.00
-jinn 1 200.00
 dream 2 0.00
 fortran 5 0.00

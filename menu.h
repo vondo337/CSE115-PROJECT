@@ -45,6 +45,8 @@
     remove("accounts.txt");
     rename("temp.txt", "accounts.txt");
     printf("Deposit completed successfully!\n");
+    getch();
+    system("cls");
 }
 
 void withdrawmoney() 
@@ -85,6 +87,8 @@ void withdrawmoney()
             else 
             {
                 printf("Insufficient balance to withdraw!\n");
+                getch();
+                system("cls");
             }
         }
         fprintf(tempFile, "%s %d %.2lf\n", account.name, account.account_number, account.balance);
@@ -102,6 +106,8 @@ void withdrawmoney()
     remove("accounts.txt");
     rename("temp.txt", "accounts.txt");
     printf("Withdrawal completed successfully!\n");
+    getch();
+    system("cls");
 }
 
 void transfermoney() 
@@ -145,6 +151,8 @@ void transfermoney()
             else 
             {
                 printf("Insufficient balance to transfer!\n");
+                getch();
+                system("cls");
             }
         } 
         else if (account.account_number == to_account) 
@@ -162,11 +170,15 @@ void transfermoney()
     {
         remove("temp.txt");
         printf("One or both accounts not found!\n");
+        getch();
+        system("cls");
         return;
     }
     remove("accounts.txt");
     rename("temp.txt", "accounts.txt");
     printf("Transfer completed successfully!\n");
+    getch();
+    system("cls");
 }
 
 void checkbalance() 
@@ -189,6 +201,8 @@ void checkbalance()
         {
             printf("Account Holder: %s\n", account.name);
             printf("Account Balance: %.2lf\n", account.balance);
+            getch();
+            system("cls");
             found = 1;
         }
     }
@@ -198,6 +212,8 @@ void checkbalance()
     if (!found) 
     {
         printf("Account not found!\n");
+        getch();
+        system("cls");
     }
 }
 
@@ -243,6 +259,8 @@ void accountdeletion()
     {
         remove("temp.txt");
         printf("Account not found!\n");
+        getch();
+        system("cls");
         return;
     }
 
@@ -250,6 +268,8 @@ void accountdeletion()
     rename("temp.txt", "accounts.txt");
 
     printf("Account deleted successfully!\n");
+    getch();
+    system("cls");
 }
 
 
