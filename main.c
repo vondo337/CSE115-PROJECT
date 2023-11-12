@@ -32,7 +32,7 @@ int main(void)
     int choice;
     //Main Menu
     do {
-         printf("                      ---------------------------Welcome to the Bank of TND ---------------------------\n");
+        printf("                      ---------------------------Welcome to the Bank of TND ---------------------------\n");
         printf("\n\t\t\t\t\t\t\tMain Menu\n");
         printf("\t\t\t\t\t\t1. Create Account\n");
         printf("\t\t\t\t\t\t2. Deposit\n");
