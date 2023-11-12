@@ -65,3 +65,16 @@ const char *splash[] = {
 "  \\_/ \\_| \\_/___/   \\____/\\_| |_/\\_| \\_/\\_| \\_/",
                                                                                                 
 };
+
+void screen()
+{
+    //Splash Screen
+    system("cls");      
+    for(int i = 0; splash[i] != NULL; i++ )
+    {
+            printf("%s\n", splash[i]);
+            usleep(1000);
+    }
+    sleep(2);
+    system("cls");
+}

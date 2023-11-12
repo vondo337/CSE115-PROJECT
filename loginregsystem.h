@@ -1,37 +1,19 @@
-#define MAX_USERS 100
+void createaccount() {
+    BankAccount account;
+    printf("Enter the account holder's name: ");
+    scanf("%s", account.name);
+    printf("Enter the account number: ");
+    scanf("%d", &account.account_number);
+    printf("Enter the initial balance: ");
+    scanf("%lf", &account.balance);
 
-struct User 
-{
-    char username[50];
-    char password[50];
-};
-void registerUser(struct User users[], int *userCount, const char username[], const char password[]) 
-{
-    if (*userCount < MAX_USERS) 
-    {
-        strcpy(users[*userCount].username, username);
-        strcpy(users[*userCount].password, password);
-        (*userCount)++;
-        FILE *file = fopen("users.txt", "a");
-        if (file) 
-        {
-            fprintf(file, "%s %s\n", username, password);
-            fclose(file);
-        } 
-        else 
-        {
-            printf("Failed to write user data to the file.\n");
-        }
+    // Open the file in append mode to add the new account
+    FILE* file = fopen("accounts.txt", "a");
+    if (file == NULL) {
+        printf("Error opening the file for writing!\n");
+        return;
     }
-}
-int loginUser(struct User users[], int userCount, const char username[], const char password[]) 
-{
-    for (int i = 0; i < userCount; i++) 
-    {
-        if (strcmp(users[i].username, username) == 0 && strcmp(users[i].password, password) == 0) 
-        {
-            return i; // User found, return the index
-        }
-    }
-    return -1; // User not found
+    fprintf(file, "%s %d %.2lf\n", account.name, account.account_number, account.balance);
+    fclose(file);
+    printf("Account created successfully!\n");
 }

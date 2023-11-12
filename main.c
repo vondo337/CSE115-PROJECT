@@ -8,6 +8,18 @@ Project Name: Bank Management System*/
 #include<string.h>
 #include<unistd.h>
 #include<windows.h>
+typedef struct {
+    char name[50];
+    int account_number;
+    double balance;
+} BankAccount;
+void screen();
+void createaccount();
+void transfermoney();
+void checkbalance();
+void depositmoney();
+void withdrawmoney();
+void accountdeletion();
 #include "splash.h"
 #include "loginregsystem.h"
 #include "menu.h"
@@ -15,123 +27,47 @@ Project Name: Bank Management System*/
 
 int main(void)
 {
-    //Splash Screen
-    system("cls");      
-    for(int i = 0; splash[i] != NULL; i++ )
-    {
-            printf("%s\n", splash[i]);
-            usleep(1000);
-    }
-    sleep(2);
-    system("cls");
-    struct User users[MAX_USERS];
-    int userCount = 0;
+    screen();
     int choice;
-    FILE *file = fopen("users.txt", "r");   //Loads account username and passowrd
-    if (file) 
-    {
-        while (fscanf(file, "%s %s", users[userCount].username, users[userCount].password) == 2) 
-        {
-            userCount++;
-        }
-        fclose(file);
-    }
+    double balance;
     //Login Screen
-    while (1) 
-    {
         printf("                      ---------------------------Welcome to the Bank of TND ---------------------------\n");
-        printf("1. Register\n2. Login\n3. Quit\nEnter your choice: ");
+    do {
+        printf("1. Create Account\n");
+        printf("2. Deposit\n");
+        printf("3. Withdraw\n");
+        printf("4. Transfer\n");
+        printf("5. Check Balance\n");
+        printf("6. Delete Account\n");
+        printf("7. Exit\n");
+        printf("Enter your choice: ");
         scanf("%d", &choice);
 
-        if(choice == 1) 
-        {
-            char ch;
-            int i = 0;
-            char username[50], password[50];
-            printf("Enter a username: ");
-            scanf("%s", username);
-            printf("Enter a password: ");
-            while((ch = _getch()) != 13)
-            {
-                password[i] = ch;
-                i++;
-                printf("*");
-            }
-            password[i] = '\0';
-            registerUser(users, &userCount, username, password);
-            printf("\nAccount created successfully.");
-            sleep(1);
-            system("cls");
-        } 
-        else if(choice == 2) 
-        {
-            char ch;
-            int i = 0;
-            char username[50], password[50];
-            printf("Enter your username: ");
-            scanf("%s", username);
-            printf("Enter your password: ");
-            while((ch = _getch()) != 13)
-            {
-                password[i] = ch;
-                i++;
-                printf("*");
-            }
-            password[i] = '\0';
-            int index = loginUser(users, userCount, username, password);
-            if (index != -1) 
-            {
-                printf("\nLogin successful. Welcome, %s!\n", users[index].username);
-                sleep(1);        
-                system("cls");
-                //Menu Screen
-                printf("       ---------------------------Main Menu---------------------------\n");
-                printf("1. Withdraw Money\n2. Deposit Money\n3. Check Balance\n4. Transfer money\n5. Delete your account\n6. Exit\nEnter your choice: ");
-                scanf("%d", &choice);
-                if(choice == 1)
-                {
-                    void withdrawmoney();
-                }
-                else if(choice == 2)
-                {
-                     
-                }
-                else if(choice == 3)
-                {
-                    void checkbalance(balance);
-                }
-                else if(choice == 4)
-                {
-                    void transfermoney();
-                }
-                else if(choice == 5)
-                {
-                    void accountdeletion();
-                }
-                else if(choice == 6)
-                {
-                    break;
-                }
-                else
-                {
-                    printf("Invalid choice. Please try again.");
-                }
-            } 
-            else 
-            {
-                printf("\nLogin failed. Invalid username or password.\n");
-                sleep(1);
-                system("cls");
-            }
-        } 
-        else if(choice == 3) 
-        {
-            break;
-        } 
-        else 
-        {
-            printf("Invalid choice. Please try again.\n");
+        switch (choice) {
+            case 1:
+                createaccount();
+                break;
+            case 2:
+                depositmoney();
+                break;
+            case 3:
+                withdrawmoney();
+                break;
+            case 4:
+                transfermoney();
+                break;
+            case 5:
+                checkbalance();
+                break;
+            case 6:
+                accountdeletion();
+                break;
+            case 7:
+                printf("Exiting the program. Thank you!\n");
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n");
         }
-    }  
+    } while (choice != 7);
   return 0;
 }
