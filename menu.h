@@ -7,14 +7,14 @@
     printf("Enter the amount to deposit: ");
     scanf("%lf", &amount);
 
-    FILE* file = fopen("accounts.txt", "r");  //// For finding the account the txt file is in read mode
-    if (file == NULL) 
+    FILE* file = fopen("accounts.txt", "r");  // For finding the account the txt file is in read mode
+    if(file == NULL) 
     {
         printf("Error opening the file for reading!\n");
         return;
     }
     FILE* tempFile = fopen("temp.txt", "w");
-    if (tempFile == NULL) 
+    if(tempFile == NULL) 
     {
         printf("Error opening the temp file for writing!\n");
         fclose(file);
@@ -35,7 +35,7 @@
     fclose(file);
     fclose(tempFile);
 
-    if (!found) 
+    if(!found) 
     {
         remove("temp.txt");
         printf("Account not found!\n");
@@ -60,13 +60,13 @@ void withdrawmoney()
     scanf("%lf", &amount);
 
     FILE* file = fopen("accounts.txt", "r"); //For finding the account the txt file is opened in read mode
-    if (file == NULL) 
+    if(file == NULL) 
     {
         printf("Error opening the file for reading!\n");
         return;
     }
     FILE* tempFile = fopen("temp.txt", "w");
-    if (tempFile == NULL) 
+    if(tempFile == NULL) 
     {
         printf("Error opening the temp file for writing!\n");
         fclose(file);
@@ -75,11 +75,11 @@ void withdrawmoney()
 
     BankAccount account;
     int found = 0;
-    while (fscanf(file, "%s %d %lf", account.name, &account.account_number, &account.balance) != EOF) 
+    while(fscanf(file, "%s %d %lf", account.name, &account.account_number, &account.balance) != EOF) 
     {
-        if (account.account_number == account_number) 
+        if(account.account_number == account_number) 
         {
-            if (account.balance >= amount) 
+            if(account.balance >= amount) 
             {
                 account.balance -= amount;
                 found = 1;
@@ -97,7 +97,7 @@ void withdrawmoney()
     fclose(file);
     fclose(tempFile);
 
-    if (!found) 
+    if(!found) 
     {
         remove("temp.txt");
         printf("Account not found!\n");
@@ -123,14 +123,14 @@ void transfermoney()
     scanf("%lf", &amount);
 
     FILE* file = fopen("accounts.txt", "r");   // For finding the accounts the txt file is opened in read mode
-    if (file == NULL) 
+    if(file == NULL) 
     {
         printf("Error opening the file for reading!\n");
         return;
     }
 
     FILE* tempFile = fopen("temp.txt", "w");
-    if (tempFile == NULL) 
+    if(tempFile == NULL) 
     {
         printf("Error opening the temp file for writing!\n");
         fclose(file);
@@ -139,11 +139,11 @@ void transfermoney()
 
     BankAccount account;
     int from_found = 0, to_found = 0;
-    while (fscanf(file, "%s %d %lf", account.name, &account.account_number, &account.balance) != EOF) 
+    while(fscanf(file, "%s %d %lf", account.name, &account.account_number, &account.balance) != EOF) 
     {
-        if (account.account_number == from_account) 
+        if(account.account_number == from_account) 
         {
-            if (account.balance >= amount) 
+            if(account.balance >= amount) 
             {
                 account.balance -= amount;
                 from_found = 1;
@@ -155,7 +155,7 @@ void transfermoney()
                 system("cls");
             }
         } 
-        else if (account.account_number == to_account) 
+        else if(account.account_number == to_account) 
         {
             account.balance += amount;
             to_found = 1;
@@ -166,7 +166,7 @@ void transfermoney()
     fclose(file);
     fclose(tempFile);
 
-    if (!from_found || !to_found) 
+    if(!from_found || !to_found) 
     {
         remove("temp.txt");
         printf("One or both accounts not found!\n");
@@ -187,7 +187,7 @@ void checkbalance()
     printf("Enter the account number: ");
     scanf("%d", &account_number);
     FILE* file = fopen("accounts.txt", "r"); // For finding the account the file is opened in read mode
-    if (file == NULL) 
+    if(file == NULL) 
     {
         printf("Error opening the file for reading!\n");
         return;
@@ -195,9 +195,9 @@ void checkbalance()
 
     BankAccount account;
     int found = 0;
-    while (fscanf(file, "%s %d %lf", account.name, &account.account_number, &account.balance) != EOF) 
+    while(fscanf(file, "%s %d %lf", account.name, &account.account_number, &account.balance) != EOF) 
     {
-        if (account.account_number == account_number) 
+        if(account.account_number == account_number) 
         {
             printf("Account Holder: %s\n", account.name);
             printf("Account Balance: %.2lf\n", account.balance);
@@ -209,7 +209,7 @@ void checkbalance()
 
     fclose(file);
 
-    if (!found) 
+    if(!found) 
     {
         printf("Account not found!\n");
         getch();
@@ -225,14 +225,14 @@ void accountdeletion()
     scanf("%d", &account_number);
 
     FILE* file = fopen("accounts.txt", "r");   // For finding the account the file is opened in read mode
-    if (file == NULL) 
+    if(file == NULL) 
     {
         printf("Error opening the file for reading!\n");
         return;
     }
 
     FILE* tempFile = fopen("temp.txt", "w");
-    if (tempFile == NULL) 
+    if(tempFile == NULL) 
     {
         printf("Error opening the temp file for writing!\n");
         fclose(file);
@@ -241,9 +241,9 @@ void accountdeletion()
 
     BankAccount account;
     int found = 0;
-    while (fscanf(file, "%s %d %lf", account.name, &account.account_number, &account.balance) != EOF) 
+    while(fscanf(file, "%s %d %lf", account.name, &account.account_number, &account.balance) != EOF) 
     {
-        if (account.account_number == account_number) 
+        if(account.account_number == account_number) 
         {
             found = 1;
         } else 
@@ -255,7 +255,7 @@ void accountdeletion()
     fclose(file);
     fclose(tempFile);
 
-    if (!found) 
+    if(!found) 
     {
         remove("temp.txt");
         printf("Account not found!\n");
