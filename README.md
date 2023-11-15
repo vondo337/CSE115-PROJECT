@@ -1,6 +1,6 @@
 # Bank Management System
 
-This is a CSE115 project fully built using C language. The project aims to help a user create their account, deposit, transfer money and may even delete their account alongside balance recording system with the help of file hanling using txt files.
+This is a CSE115 project fully built using C language. The project aims to help a user create their account, deposit, transfer money and may even delete their account alongside balance recording system with the help of file handling using txt files.
 ## Usage
 
 ``
