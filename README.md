@@ -12,7 +12,7 @@ gcc main.c
 
 ## Features
 
-In this project, seven functions have been used to make it run successfully.
+In this project, seven functions have been used to make it run effectively.
 - void createaccount() - It is used to create account.
 - void transfermoney() - Used to transfer money from one account to another.
 - void depositmoney() - Used to deposit money in a certain account.
