@@ -1,5 +1,4 @@
 /*CSE115 PROJECT
-Name: Ahmed Ishmam Arefin
 ID: 2322035642
 Section: 9
 Project Name: Bank Management System*/
