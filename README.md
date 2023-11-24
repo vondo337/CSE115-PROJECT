@@ -19,9 +19,6 @@ In this project, seven functions have been used to make it run effectively.
 - void withdrawmoney() - Used to withdraw money from a certain account.
 - void accountdeletion() - Used to remove an account from the account holder file (txt file).
 - void checkbalance() - Used to check balance of a certain account.
-## Author
-- Ahmed Ishmam Arefin
-- Department of Electrical and Computer Engineering
-- North South University
+
 
  
