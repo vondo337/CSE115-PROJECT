@@ -13,12 +13,12 @@ gcc main.c
 ## Features
 
 In this project, seven functions have been used to make it run effectively.
-- void createaccount() - It is used to create account.
-- void transfermoney() - Used to transfer money from one account to another.
-- void depositmoney() - Used to deposit money in a certain account.
-- void withdrawmoney() - Used to withdraw money from a certain account.
-- void accountdeletion() - Used to remove an account from the account holder file (txt file).
-- void checkbalance() - Used to check balance of a certain account.
+- ``void createaccount()`` - It is used to create account.
+- ``void transfermoney()`` - Used to transfer money from one account to another.
+- ``void depositmoney()`` - Used to deposit money in a certain account.
+- ``void withdrawmoney()`` - Used to withdraw money from a certain account.
+- ``void accountdeletion()`` - Used to remove an account from the account holder file (txt file).
+- ``void checkbalance()`` - Used to check balance of a certain account.
 
 
  
